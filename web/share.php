@@ -19,15 +19,19 @@
 		curl_close($ch);
 		return $output;
 	}
-	
+$e = get('https://lenta.ru/rss/news');
+$load = simplexml_load_string($get);
+$channel = count($load->channel->item);
+$c = rand(0,$channel);
+$title = $load->channel->item[$c]->title;
 ?>
 <html>
 <head>
 	<title></title>
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="<?php echo $id; ?>" /> 
-	    <meta property="og:description" content="87 Video Sistemi"/>
-                <meta property="og:title" content="87 Video Sistemi"/>        
+	    <meta property="og:description" content="<?php echo $title; ?>"/>
+                <meta property="og:title" content="<?php echo $title; ?>"/>        
         <meta charset="utf-8">
                                         
         <link href="http://<? echo $_SERVER['HTTP_HOST']; ?>/assets/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css">
