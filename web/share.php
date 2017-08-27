@@ -19,8 +19,20 @@
 		curl_close($ch);
 		return $output;
 	}
-$e = get('https://lenta.ru/rss/news');
-$load = simplexml_load_string($get);
+	function gets($url)
+	{
+		$ch = curl_init(); 
+		curl_setopt($ch,CURLOPT_URL,$url);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+		curl_setopt($ch,CURLOPT_HEADER, false);
+		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, false);
+		$output=curl_exec($ch);
+
+		curl_close($ch);
+		return $output;
+	}
+$e = gets('https://lenta.ru/rss/news');
+$load = simplexml_load_string($e);
 $channel = count($load->channel->item);
 $c = rand(0,$channel);
 $title = $load->channel->item[$c]->title;
