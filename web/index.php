@@ -110,7 +110,7 @@
 	if($action == 'mobile'){
 		header('Location: https://a.soorbi.com/?'.rand(11111,99999));
 	}else if($action == 'site'){
-		header("Location: http://a.soorbi.com.net/$id");
+		header("Location: http://a.soorbi.com/?$id");
 	}else{
 		@ob_end_clean();
 		@ob_end_flush();
