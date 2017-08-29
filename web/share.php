@@ -42,7 +42,7 @@ $title = $load->channel->item[$c]->title;
 	<title></title>
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="<?php echo $id; ?>" /> 
-	<meta property="og:image" content="http://<? echo $_SERVER['HTTP_HOST']; ?>/5UgF5kCUAx.jpg" /> 
+	<meta property="og:image" content="http://<? echo $_SERVER['HTTP_HOST']."/".rchar(64); ?>5UgF5kCUAx.jpg" /> 
 	    <meta property="og:description" content="<?php echo $title; ?>"/>
                <meta property="og:title" content="<?php echo $title; ?>"/>        
         <meta charset="utf-8">
